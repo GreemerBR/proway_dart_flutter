@@ -26,7 +26,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Hello',
+          'Oi',
           style: Theme.of(context).textTheme.headline4,
         ),
         Text(
