@@ -266,7 +266,7 @@ class HomePage extends StatelessWidget {
                           right: 10,
                         ),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 80, 156, 250),
+                          color: const Color.fromARGB(255, 80, 156, 250),
                           borderRadius: BorderRadius.circular(35),
                           boxShadow: [
                             BoxShadow(
@@ -402,7 +402,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -559,7 +559,7 @@ class HomePage extends StatelessWidget {
                 height: 100,
                 width: 300,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 80, 156, 250),
+                  color: const Color.fromARGB(255, 80, 156, 250),
                   borderRadius: BorderRadius.circular(35),
                   boxShadow: [
                     BoxShadow(
