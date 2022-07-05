@@ -32,7 +32,13 @@ class HomePage extends StatelessWidget {
                     horizontal: 15, vertical: 15), // Coloca espaço para fora
                 decoration: BoxDecoration(
                   // Decoração do container
-                  color: Colors.white,
+                  image: const DecorationImage(
+                      image: NetworkImage(
+                        'https://cdn.pixabay.com/photo/2014/08/09/15/45/clouds-414198_960_720.jpg',
+                      ),
+                      fit: BoxFit.cover,
+                      colorFilter:
+                          ColorFilter.mode(Colors.blueGrey, BlendMode.color)),
                   borderRadius: BorderRadius.circular(35), // Borda arredondada
                   boxShadow: [
                     // Cor da sombra
@@ -49,14 +55,14 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment:
                       CrossAxisAlignment.start, // Eixo secundário
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50, bottom: 10),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 50, bottom: 10),
                       child: Text(
-                        '1 Feb 2019',
+                        '7 Jul 2022',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey.shade700,
+                          color: Colors.black,
                         ),
                       ),
                     ),
@@ -66,7 +72,7 @@ class HomePage extends StatelessWidget {
                         children: const [
                           Icon(
                             Icons.cloud,
-                            color: Colors.yellow,
+                            color: Colors.white,
                             size: 35,
                           ),
                           SizedBox(width: 15),
@@ -112,7 +118,7 @@ class HomePage extends StatelessWidget {
                               'Indoor Temp',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -135,7 +141,7 @@ class HomePage extends StatelessWidget {
                               'Outdoor Humidity',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -158,7 +164,7 @@ class HomePage extends StatelessWidget {
                               'Indoor Humidity',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -177,8 +183,8 @@ class HomePage extends StatelessWidget {
                   // Por padrão vem na vertical
                   scrollDirection: Axis.horizontal, // Coloca na horizontal
                   padding: const EdgeInsets.only(left: 25),
-                  children: const [
-                    Padding(
+                  children: [
+                    const Padding(
                       padding: EdgeInsets.all(8),
                       child: Text(
                         'Living Room',
@@ -189,50 +195,55 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(
                         'Kitchen',
                         style: TextStyle(
+                          color: Colors.grey.shade500,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(
                         'Dinning Room',
                         style: TextStyle(
+                          color: Colors.grey.shade500,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(
                         'Garage',
                         style: TextStyle(
+                          color: Colors.grey.shade500,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(
                         'Room',
                         style: TextStyle(
+                          color: Colors.grey.shade500,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(
                         'Bathroom',
                         style: TextStyle(
+                          color: Colors.grey.shade500,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -542,6 +553,24 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ],
+              ),
+              const SizedBox(height: 30),
+              Container(
+                height: 100,
+                width: 300,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 80, 156, 250),
+                  borderRadius: BorderRadius.circular(35),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueGrey.shade100,
+                      blurRadius: 10,
+                      spreadRadius: 5,
+                      offset: const Offset(4, 5),
+                    ),
+                  ],
+                ),
+                child: Row(),
               ),
             ],
           ),
