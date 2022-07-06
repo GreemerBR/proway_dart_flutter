@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'next_page.dart';
 
 void main() {
   runApp(
@@ -17,9 +18,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // Esqueleto da tela, tudo que vai esta naquela page
-      // appBar: AppBar(
-      //   title: const Text('App Treino'),
-      // ),
+      appBar: AppBar(
+        title: const Text(
+          'House controller',
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NextPage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.arrow_forward,
+              size: 25,
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(

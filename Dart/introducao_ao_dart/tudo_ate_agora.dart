@@ -1,6 +1,7 @@
 void main() {
   //Comentários
   // é usado para comentar
+  // ignore: todo
   // TODO: cria warnings
 
   // Variável

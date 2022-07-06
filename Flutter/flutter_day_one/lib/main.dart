@@ -20,6 +20,7 @@ class HomePage extends StatefulWidget {
     Key? key,
     required this.title,
   }) : super(key: key);
+  @override
   State<HomePage> createState() => _MyHomePageState();
 }
 
@@ -39,6 +40,7 @@ class _MyHomePageState extends State<HomePage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     // Método que irpa "buildar" toda nossa view
     // passado o context (ajuda a identificar nossa árvore) e retornando um Widget
@@ -74,7 +76,8 @@ class _MyHomePageState extends State<HomePage> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Colors.black,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
               ),
               onPressed: () {
                 alterarImagem();
