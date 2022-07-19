@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
         'https://api.whatsapp.com/send?phone=5545991318552&text=Ol%C3%A1%2C%20eu%20vi%20seu%20an%C3%BAncio%20no%20Deal.%20Podemos%20conversar%3F',
       );
     } catch (e) {
+      // ignore: avoid_print
       print('Deu erro $e');
     }
   }

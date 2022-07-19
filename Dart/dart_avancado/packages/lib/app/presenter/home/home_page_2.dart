@@ -25,8 +25,14 @@ class _HomePage2State extends State<HomePage2> {
           if (snapshot.hasData == false) {
             return const CircularProgressIndicator();
           }
-          return ListTile(
-            title: Text(snapshot.data![0].toString()),
+          return ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: snapshot.data!.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text('Sou o ${snapshot.data![index]}'),
+              );
+            },
           );
         },
       ),
