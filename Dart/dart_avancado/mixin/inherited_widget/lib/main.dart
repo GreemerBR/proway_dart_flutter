@@ -6,8 +6,8 @@ import 'package:main/presenter/home/home_page.dart';
 void main() {
   setupGetIt();
   runApp(
-    InheritedDate(
-      child: const MaterialApp(
+    const InheritedDate(
+      child: MaterialApp(
         title: 'AppTreino',
         home: HomePage(),
         debugShowCheckedModeBanner: false,

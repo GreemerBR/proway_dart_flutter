@@ -1,0 +1,24 @@
+Arquitetura Limpa é o modelo de um sistema modular, que segue estritamente o princípio de design chamado separação de preocupações.
+
+Mais especificamente, esse estilo de arquitetura se concentra em dividir o sofware em camadas, para simplificar o desenvolvimento e manutenção
+do próprio sistema.
+
+Sempre que pensar em arquitetura limpa, pensar em desenvolvimento em camadas.
+
+Enterprise Business Rule
+Application Business Rule
+Interface Adapter
+Framewords & Drivers
+
+REGRAS DE DEPENDÊNCIA (As camadas externas conhecem as irternas, mas o contrário não é verdade)
+As dependências do código fonte só apontam para dentro. Isso significa que os módulos internos não estão cientes nem dependem de módulos externos.
+
+No entando, os módulos externos são conscientes e dependentes de módulos internos.
+
+Quanto mais você se move para dentro, mais abstração está presente. Quanto mais você se move para fora, mais implementações concretas estão
+presentes.
+
+CAMADAS
+Aprenderemos a seguir cada uma das camadas, começando do centro.
+
+~~ DOMAIN

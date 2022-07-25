@@ -1,0 +1,248 @@
+S - Single Responsibility Principle (Princípio de Responsabilidade Única)
+O - Open-Close Principle (Princípio Aberto-Fechado)
+L - Liskov Substituition Principle (Princípio da Substituição de Liskov)
+I - Inferface Segregation Principle (Princípio da Segregação de Interface)
+D - Dependency Inversion Principle (Princípio da Inversão de Dependência)
+
+################################################################################################################################################
+
+S: (SRP)
+Uma classe ou uma entidade deve ter 1 e apenas 1 motivo para ser modificado.
+
+CONSEQUÊNCIAS DE NÃO USAR:
+Falta de coesão - Classes não devem assumir responsabilidades que não são suas;
+Ato acoplamento - Mias responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações;
+Dificuldade na implementação de testes automatizados;
+Dificuldade para reaproveitar o código.
+
+EXEMPLO:
+class Order {
+    void calculateTotalSum(item) {}
+    void getItems(item) {}
+    void addItems(item) {}
+    void deleteItem(item) {}
+    void printOrder(order) {}
+    void showOrder(order) {}
+    void load (orderID) {}
+    void save (order) {}
+    void update (order) {}
+    void delete (order) {}
+}
+
+class Order {
+    void calculateTotalSum(item){}
+    void getItems(item) {}
+    void addItems(item) {}
+    void deleteItem(item) {}   
+}
+
+class OrderViewer {
+    void printOrder(order) {}
+    void showOrder(order) {} 
+}
+
+class OrderRepository {
+    void load (orderID) {}
+    void save (order) {}
+    void update (order) {}
+    void delete (order) {}
+}
+
+################################################################################################################################################
+
+O: (OCP)
+Objetos ou entidades devem estar abertos para extensão, mas fechados para modificação, ou seja, quando novos comportamentos e recursos precisam
+ser adicionados no software, devemos estender e não alterar o código fonte original.
+
+CONSEQUÊNCIAS DE NÃO USAR:
+Alterar uma classe já existente para adicionar um novo comportamento, corremos um sério risco de introduzir bugs em algo que já estava
+funcionando.
+
+EXEMPLO:
+void main() {
+  ContratoClt contratoClt = ContratoClt();
+  ContratoPj contratoPj = ContratoPj();
+  ContratoMenorAprendiz menorAprendiz = ContratoMenorAprendiz();
+
+  FolhaDePagamento folhaDePagamento = FolhaDePagamento();
+  folhaDePagamento.calcular(contratoPj);
+  folhaDePagamento.calcular(contratoClt);
+  folhaDePagamento.calcular(menorAprendiz);
+}
+
+abstract class Remuneravel {
+  void remuneracao();
+}
+
+class ContratoClt implements Remuneravel {
+  @override
+  void remuneracao() {
+    print('Pagamento do tipo clt');
+    //...
+  }
+}
+
+class ContratoPj implements Remuneravel {
+  @override
+  void remuneracao() {
+    print('Pagamento do tipo PJ');
+    // ...
+  }
+}
+
+class ContratoMenorAprendiz implements Remuneravel {
+  @override
+  void remuneracao() {
+    print('Pagando o jovem aprendiz');
+  }
+
+}
+
+class Estagio implements Remuneravel {
+  @override
+  void remuneracao() {
+    print('Pagamento de bolsa de estudo');
+    //...
+  }
+}
+
+class FolhaDePagamento {
+  double? saldo;
+
+  void calcular(Remuneravel funcionario) {
+    funcionario.remuneracao();
+  }
+}
+
+################################################################################################################################################
+
+L: (LSP)
+Uma classe base deve ser substituível por sua classe derivada.
+
+Se a classe S é um subtipo da classe T então os objetos do tipo T, em um programa, podem ser substituídos pelos objetos de tipo S sem que seja
+necessário alterar as propriedades deste programa.
+
+Sobrescrever/implementar um método que não faz nada;
+Lançar uma exceção inesperada;
+Retornar valores de tipos diferentes da classe base.
+
+EXEMPLO:
+void main(){
+    var pessoa1 = Pessoa();
+    var cliente1 = Cliente();
+
+    void imprimeNome(Pessoa objeto) {
+        return objeto.getNome();
+    }
+
+    imprimeNome(pessoa1);
+    imprimeNome(cliente1);
+}
+
+// Classe base
+class Pessoa {
+    void getNome(){
+        print('Meu nome é Pessoa');
+    }
+}
+
+// Classe derivada
+class Cliente extends Pessoa {
+    void getNome(){
+        print('Meu nome é Cliente');
+    }
+
+    void getCpfCliente(){
+        print('Toma aqui meu cpf');
+    }
+}
+
+################################################################################################################################################
+
+I: (ISP)
+Uma clase não deve ser forçada a implementar interfaces e/ou métodos que não irão utilizar.
+
+Esse princípio basicamente diz que é melhor criar interfaces mais específicas ao invés de termos uma única interface genérica.
+
+CONSEQUÊNCIAS DE NÃO USAR:
+Uma classe precisar herdar métodos que não inúteis para eles;
+Código ficar acumulando muito lixo dificultando no futuro o desenvolvimento de novas features / escalar o software.
+
+EXEMPLO:
+abstract class Aves {
+        void setLocalizacao(longitude, latitude);
+        void renderizar();
+}
+
+abstract class AvesQueVoam extends Aves {
+        void voar(altitude);
+}
+
+class Papagaio implements AvesQueVoam {
+    void setLocalizacao(longitude, latitude) {
+        // Faz algo...
+    }
+
+     void renderizar() {
+        // Faz algo...
+    }
+
+     void voar(altitude) {
+        // Faz algo...
+    }
+}
+
+class Pinguin implements Aves {
+    void setLocalizacao(longitude, latitude) {
+        // Faz algo...
+    }
+
+     void renderizar() {
+        // Faz algo...
+    }
+}
+
+################################################################################################################################################
+
+D: (DIP)
+Dependa de abstrações e não de implementações.
+
+1. Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações;
+2. Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações.
+
+Para fazermos a inversão de dependências, nós usaremos a injeção de dependências.
+Normalmente, a injeção de dependência é usada simplesmente 'injetando' quaisquer dependências de uma classe através do construtor da classe
+como 'parâmetro de entrada'.
+
+CONSEQUÊNCIAS DE NÃO USAR:
+Quando dependemos d implementações ficamos engessados a não conseguir mudar essa classe;
+Não testa-la com testes unitários, já que a dependência da mesma está sendo criada internamente.
+
+EXEMPLO:
+void main(){
+    MySQLConnection mySQLConnection = MySQLConnection();
+    OracleConnection oracleConnection = OracleConnection();
+
+    PasswordReminder passwordReminder = PasswordReminder(oracleConnection);
+}
+
+abstract class DBConnectionInterface {
+    void connect();
+}
+
+class MySQLConnection implements DBConnectionInterface {
+    void connect(){
+        // Faz algo...
+    }
+}
+
+class OracleConnection implements DBConnectionInterface {
+    void connect(){
+        // Faz algo...
+    }
+}
+
+class PasswordReminder {
+    DBConnectionInterface dbConnection;
+    PasswordReminder(this.dbConnection);
+}

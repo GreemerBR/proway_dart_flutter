@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class InheritedDate extends InheritedWidget {
-  InheritedDate({Key? key, required this.child})
+  const InheritedDate({Key? key, required this.child})
       : super(key: key, child: child);
 
+  @override
+  // ignore: overridden_fields
   final Widget child;
   final String dateTemp = '17 de maio de 1993';
 

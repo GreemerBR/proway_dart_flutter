@@ -30,7 +30,7 @@ class _HomePage2State extends State<HomePage2> {
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text('Sou o ${snapshot.data![index]}'),
+                title: Text('Sou o/a ${snapshot.data![index]}'),
               );
             },
           );

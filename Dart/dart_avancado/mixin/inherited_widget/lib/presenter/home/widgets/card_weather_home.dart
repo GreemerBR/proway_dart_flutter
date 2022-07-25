@@ -11,6 +11,7 @@ class CardWeatherHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final String dateTemp = InheritedDate.of(context)!.dateTemp;
 
     return Container(
