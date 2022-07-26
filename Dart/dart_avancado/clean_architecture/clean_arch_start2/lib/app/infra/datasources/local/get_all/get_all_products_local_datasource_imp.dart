@@ -18,7 +18,7 @@ class GetAllProductsLocalDatasourceImp implements IGetAllProductsDatasource {
         name: 'Bicicleta',
         brand: 'Caloi',
         category: 'Veículos',
-        price: -300.00,
+        price: 300.00,
         quantity: 2,
       ),
       ProductEntity(
@@ -27,7 +27,7 @@ class GetAllProductsLocalDatasourceImp implements IGetAllProductsDatasource {
         brand: 'HyperX',
         category: 'Eletrônicos',
         price: 162.00,
-        quantity: 0,
+        quantity: 1,
       ),
     ];
   }

@@ -1,23 +1,24 @@
-import 'package:clean_arch_start2/app/domain/usecases/get_all/get_all_products_usecase.dart';
-import 'package:clean_arch_start2/app/domain/usecases/get_by_id/get_products_by_id_usecase.dart';
-
 import '../../domain/entities/product_entitiy.dart';
+import '../../domain/usecases/get_all/get_all_products_usecase.dart';
+import '../../domain/usecases/get_by_id/get_product_by_id_usecase.dart';
 
 class ProductController {
   // No nocco controller nós usaremos os usecase. Por isso, é solicitado uma
   // instancia do CONTRATO no construtor, fazendo o DIP
 
   final IGetAllProductsUsecase _getAllProductsUsecase;
-  final IGetProductsByIdUsecase _getProductsByIdUsecase;
+  final IGetProductByIdUsecase _getProductByIdUsecase;
 
   ProductController(
     this._getAllProductsUsecase,
-    this._getProductsByIdUsecase,
+    this._getProductByIdUsecase,
   ) {
     // Aqui no construtor é realizada a chamada do método getApppProducs para
     // trazer todos os produtos
     getAllProducts();
-    getProductById();
+    // Aqui não chamamos o getProductById porque quando entramos na tela
+    // queremos que ele mostre a lista de produtos, e só depois usar o
+    // getProductById
   }
   // Foi criado um objeto aqui para usar ele nas peges
   List<ProductEntity> products = [];
@@ -25,15 +26,8 @@ class ProductController {
     products = _getAllProductsUsecase.call();
   }
 
-  ProductEntity product = ProductEntity(
-    id: 0,
-    name: '',
-    brand: '',
-    category: '',
-    price: 0.00,
-    quantity: 0,
-  );
+  late ProductEntity product;
   void getProductById(int id) {
-    product = _getProductsByIdUsecase.call(id);
+    product = _getProductByIdUsecase.call(id)!;
   }
 }

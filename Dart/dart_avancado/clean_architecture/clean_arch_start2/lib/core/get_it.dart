@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 
 import '../app/domain/usecases/get_all/get_all_products_usecase_imp.dart';
+import '../app/domain/usecases/get_by_id/get_product_by_id_usecase_imp.dart';
 import '../app/infra/datasources/local/get_all/get_all_products_local_datasource_imp.dart';
 import '../app/infra/datasources/local/get_by_id/get_product_by_id_datasource_imp.dart';
 import '../app/infra/repositories/get_all/get_all_products_repository_imp.dart';
@@ -13,6 +14,9 @@ void setupDependencies() {
   // Datasources
   getIt.registerSingleton<GetAllProductsLocalDatasourceImp>(
     GetAllProductsLocalDatasourceImp(),
+  );
+
+  getIt.registerSingleton<GetProductByIdDatasourceImp>(
     GetProductByIdDatasourceImp(),
   );
 
@@ -20,6 +24,11 @@ void setupDependencies() {
   getIt.registerSingleton<GetAllProductsRepositoryImp>(
     GetAllProductsRepositoryImp(
       getIt.get<GetAllProductsLocalDatasourceImp>(),
+    ),
+  );
+
+  getIt.registerSingleton<GetProductByIdRepositoryImp>(
+    GetProductByIdRepositoryImp(
       getIt.get<GetProductByIdDatasourceImp>(),
     ),
   );
@@ -28,6 +37,11 @@ void setupDependencies() {
   getIt.registerSingleton<GetAllProductsUsecaseImp>(
     GetAllProductsUsecaseImp(
       getIt.get<GetAllProductsRepositoryImp>(),
+    ),
+  );
+
+  getIt.registerSingleton<GetProductByIdUsecaseImp>(
+    GetProductByIdUsecaseImp(
       getIt.get<GetProductByIdRepositoryImp>(),
     ),
   );
