@@ -1,0 +1,8 @@
+Faça a arquitetura de um sistema de lojinha, onde precisa ter uma entidade Cellphone com no mínimo o atributo brand e mais 3
+outros atributos da sua escolha.
+
+Depois faça um caso de uso chamado get_cellphones_by_brand_usecase.dart, e todas as utras camadas necessárias da arquitetura
+limpa.
+
+Depois no controller, chame esse método no construtor, registre as dependências com o Get_it e passe os dados na view, com um
+listView.builder.
