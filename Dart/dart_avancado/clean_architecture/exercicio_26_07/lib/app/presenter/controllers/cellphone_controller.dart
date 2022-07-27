@@ -1,6 +1,5 @@
-import 'package:exercicio_26_07/app/domain/usecases/get_cellphones_by_brand_usecases.dart';
-
 import '../../domain/entities/cellphone_entity.dart';
+import '../../domain/usecases/get_cellphones_by_brand_usecases.dart';
 
 class CellphoneController {
   final IGetCellphonesByBrandUsecases _getCellphonesByBrandUsecases;

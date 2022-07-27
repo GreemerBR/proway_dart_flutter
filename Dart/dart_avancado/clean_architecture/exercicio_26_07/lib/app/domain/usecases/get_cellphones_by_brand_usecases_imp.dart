@@ -1,6 +1,5 @@
-import 'package:exercicio_26_07/app/domain/repositories/get_cellphones_by_brand_repository.dart';
-
 import '../entities/cellphone_entity.dart';
+import '../repositories/get_cellphones_by_brand_repository.dart';
 import 'get_cellphones_by_brand_usecases.dart';
 
 class GetCellphonesByBrandUsecasesImp implements IGetCellphonesByBrandUsecases {
