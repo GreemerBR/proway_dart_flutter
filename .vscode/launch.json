@@ -1,0 +1,108 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_day_five",
+            "cwd": "Flutter\\flutter_day_five",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_day_five (profile mode)",
+            "cwd": "Flutter\\flutter_day_five",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_day_five (release mode)",
+            "cwd": "Flutter\\flutter_day_five",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_day_four",
+            "cwd": "Flutter\\flutter_day_four",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_day_four (profile mode)",
+            "cwd": "Flutter\\flutter_day_four",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_day_four (release mode)",
+            "cwd": "Flutter\\flutter_day_four",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_day_one",
+            "cwd": "Flutter\\flutter_day_one",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_day_one (profile mode)",
+            "cwd": "Flutter\\flutter_day_one",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_day_one (release mode)",
+            "cwd": "Flutter\\flutter_day_one",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dart_advanced",
+            "cwd": "Dart\\dart_avançado\\dart_advanced",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dart_advanced (profile mode)",
+            "cwd": "Dart\\dart_avançado\\dart_advanced",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dart_advanced (release mode)",
+            "cwd": "Dart\\dart_avançado\\dart_advanced",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "main",
+            "cwd": "Flutter\\flutter_day_two\\main",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "main (profile mode)",
+            "cwd": "Flutter\\flutter_day_two\\main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "main (release mode)",
+            "cwd": "Flutter\\flutter_day_two\\main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

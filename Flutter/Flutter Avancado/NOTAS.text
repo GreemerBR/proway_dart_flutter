@@ -1,0 +1,194 @@
+FLUTTER COMMUNITY WIDGETS
+https://medium.com/flutter-community/tagged/flutter-widget
+https://fluttergems.dev/
+https://itsallwidgets.com/
+https://pub.dev/packages/getwidget
+
+RECONHECIMENTO DE GESTOS
+~ Pointers
+    Trabalha com coordenadas
+
+    PointerDownEvent
+    - O ponteiro entrou em contato com a tela em um local específico
+
+    PointerMoveEvent
+    - O ponteiro foi movido de um local para outro na tela
+
+    PointerUpEvent
+    - O ponteiro parou de entrar em contato com a tela
+
+    PointerCancelEvent
+    - A entrada deste ponteiro não é mais direcionada para este aplicativo
+
+~ Gestures
+    Tap
+
+    Double Tap
+
+    Long press
+
+    Vertical drag
+
+    Horizontal drag
+
+    Pan
+
+CONTROLE DE ESTADO
+~ Estado de app vs Estado do Widget(efêmero)
+    Não há uma regra clara sobre até onde vai o que.
+    Mas, pode se pensar o seguinte, se os estado vão ser necessários em apenas um Widget é efêmero State, se não é um App State.
+
+    - Estado do Widget
+        Estado efêmero(às vezes chamado de estado de UI ou estado local) é o estado que pode ser contido perfeitamente em um único widget.
+
+        setState é suficiente.
+
+        Exemplos: O BottomNavigatorBar, progresso atual de uma animação complexa e etc.
+
+    - Estado dp app
+        Que você ira compartilhar (usar) em muitas partes do seu aplicativo, é o que chamamos de estado de aplicativo (às vezes também
+        chamado de estado compartilhado).
+
+        setState não é suficiente
+
+        Exemplos: Preferência do usuário; O carrinho de compras em um aplicativo de e-commerce;
+
+    - Em resumo, existem dois tipos conceituais de estado em qualquer aplicativo Flutter;
+        O estado efêmero pode ser implementado usando Statefull, e muitas vezes é local para um único widget. O resto é o seu estado de aplicativo.
+        Ambos os tipos têm seu lugar em qualquer aplicativo Flutter, e a divisão entre os dois depende de sua própria preferência e da complexidade do aplicativo.
+
+~ Usando o Riverpod(package hooks_riverpod)
+
+    - flutter_riverpod
+        Apenas Flutter
+
+    - hooks_riverpod
+        Flutter + flutter_hooks
+
+    - riverpod
+        Somente Dart (sem flutter)
+
+    - Providers
+        Os provedores são a parte mais importante de uma aplicação riverpod. Um provedor é um objeto que encapsula um pedaço de estado e permite ouvir esse estado.
+
+        Permite acessar facilmente esse estado em vários locais. Os provedores são um substituto completo para padrões como Singletons, Localizadores de Serviço, Injeção
+        de Dependência ou Herdados.
+
+        Simplifica a combinação deste estado com os outros. Já lutou para fundir vários objetos em um? Esse cenário é onstruído diretamente dentro dos provedores.
+
+        Permite otimizações de desempenho. Seja para filtrar reconstruções de Widget ou para cache de cálculos estatais caros; Os provedores garantem que apenas o que 
+        é impactado por uma mudança de Estado seja recomputado.
+
+        Aumenta a testabilidade de usa aplicação. Com os provedores, você não precisa de passos completos. Além disso, qualquer provedor pode ser susbtituído para se
+        comportar de forma diferente durante um teste, o que permite testar facilmente um comportamento muito específico.
+
+        Permite uma fácil integração com recursos avançados, como registro ou atualização.
+
+    - Como criar um provider?
+
+        final counter = Provider<int>((ref) {
+            return 0;
+        });
+
+    - Tipos de providers
+
+    Tipo de provedor      / Função de criação de provedor            / Caso de uso de exemplo
+    Provider              / Retorna qualquer tipo                    / Uma classe de serviço - Propriedade computada (lista filtrada)
+    StateProvider         / Retorna qualquer tipo                    / Uma condição de filtro - Objeto de estado simples
+    FutureProvider        / Retorna um futuro de qualquer tipo       / Resultado de um chamada de API
+    StreamProvider        / Retorna um fluxo de qualquer tipo        / Um fluxo de resultados de uma API
+    StateNotifierProvider / Retorna uma subsclasse do StateNotifier  / Um objeto de estado complexo que é imutável, exceto através de uma interface
+    AlterNotifierProvider / Retorna uma subsclasse do ChangeNotifier / Um objeto de estado complexo que requer mutabilidade
+
+    - Modificadores de providers
+        Todos os provedores têm uma maneira incorporada de adicionar funcionalibidade extras aos seus diferentes provedores.
+
+        Eles podem adicionar novos recursos ao objeto ou alterar ligeiramente a forma como o provedor é consumido. Os modificadores podem ser usados em todos
+        os provedores, com uma sintaxe semelhante ao chamado construtor.
+
+        final myAutoDisposeProvider = StateProvider.autoDispose<int>((ref) => 0);
+        final myFamilyProvider = Provider.family<String, int>((ref, id) => '$id');
+
+    - A importância do 'REF'
+        Em primeiro lugar, antes de ser um provedor, precisamos obter um objeto "ref".
+
+        Este objeto é o que nos permite interagir como os provedores, seja a partir de um widget ou de outro provedor.
+
+NAVEGAÇÃO
+~ Sem rotas nomeadas
+    Navigator.of(context).push
+        (MaterialPageRoute(builder: (context) => HomePage()),
+    );
+
+~ Com rotas nomeadas
+    Navigator.of(context).pushNamed('/home');
+
+~ Passando dados de uma tela para outra pela NAVEGAÇÃO
+    Navigator.of(context).pushNamed(
+        '/home',
+        arguments: 'Qualquer dado aqui (dynamic)'
+    );
+
+~ Boas práticas e cuidados a tomar
+
+STAGGERED ANIMATION
+
+    Uma animação escalonada consiste em animações sequenciais ou sobrepostas;
+    Para criar uma animação escalonada, use vários objetos Animation;
+    Um controla todos os AnimationControllerAnimation;
+    Cada objeto especifica a animação durante um AnimationInterval;
+    Para cada Propriedade que está sendo animado, crie um Tween.
+
+NETWORK E INTEGRAÇÃO COM REST API
+
+~ Conceitos sobre o Procoloco HTTP
+
+    HTTP é um protocolo para buscar recursos, como documentos HTML;
+    
+    É a base de qualquer troca de dados na Web e é um protocolo clirnte-servidor, o que significa que as solicitações são iniciadas pelo destinatário,
+    geralmente o navegador da Web;
+
+    Clientes e servidores se comunicam trocando mensagens individuais (em oposição a um fluxo de dados). As mensagens enviadas pelo cliente, geralmente
+    um navegador da Web, são chamadas de solicitações e as mensagens enviadas pelo servidor como resposta são chamadas de respostas.
+
+~ Quais os tipos de responses?
+    
+    Normalmente é um JSON;
+    Porém pode ter requisição sem corpo, ou seja, se não deu erro, significa que deu certo.
+
+~ Quais os tipos (métodos) de requests?
+
+     GET
+        Solicita uma representação do recurso especificado. Solicitações usando GET só devem recuperar dados.
+        Requisição tem corpo? Não
+        Resposta bem-sucedida tem corpo? Sim
+
+    POST
+        Enviar dados para servidor. O tipo do corpo da solicitação é indicado pelo cabeçalho Content-Type.
+        Requisição tem corpo? Sim
+        Resposta bem-sucedida tem corpo? Sim    
+
+    PUT
+        Enviar dados em pequenas quntidade de informações e para atualizações. Cria um novo recurso ou substitui uma representação do recurso de destino
+        com os novos dados.
+        Requisição tem corpo? Sim
+        Resposta bem-sucedida tem corpo? Não
+
+    DELETE
+        Excluir dados do servidor
+        Requisição tem corpo? Talvez
+        Resposta bem-sucedida tem corpo? Talvez
+
+    PATCH
+        Alterando um dos campos da base de dados
+        Requisição tem corpo? Sim
+        Resposta bem-sucedida tem corpo? Sim
+
+    A diferença entre PUT e POST é que PUT é idempotente, chamá-lo uma ve ou várias vezes sucessivamente tem o mesmo efeito, enquanto várias chamadas
+    sucessivas do POST podem ter efeitos adicionais.
+    Geralmente é enviada por meio de um formulário HTML e resulta em uma alteração no servidor. Nesse caso, o tipo de conteúdo é selecionado colocando
+    a string adequada no atributo enctype do lemente <form>, ou o atributo formnctype dos elementos <input> ou <button>.
+
+~ JSON e serialization
+
+~ Dio

@@ -22,7 +22,7 @@ class ProductsPage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: controller.products.length,
-        itemBuilder: (contexto, index) {
+        itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
               controller.getProductById(controller.products[index].id);
