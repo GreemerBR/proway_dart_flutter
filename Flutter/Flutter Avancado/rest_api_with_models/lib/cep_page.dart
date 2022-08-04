@@ -20,22 +20,21 @@ class _CepPageState extends State<CepPage> {
     try {
       String cep = cepController.text.replaceAll(RegExp('[^0-9]+'), '');
 
-      final response =
-          await Dio().get('https://viacep.com.br/ws/89012360/json/');
+      if (cep.length >= 8) {
+        final response =
+            await Dio().get('https://viacep.com.br/ws/89012360/json/');
 
-      if (response.data['erro'] != true) {
-        cepModel = CepModel.fromMap(response.data);
-      } else {
-        cepModel = null;
+        if (response.data['erro'] != true) {
+          return CepModel.fromMap(response.data);
+        }
       }
-
       cepFocusNode.unfocus();
     } catch (e) {
-      cepModel = null;
+      print('Deu erro.');
     } finally {
-      // setState(() {});
+      setState(() {});
     }
-    return cepModel;
+    return null;
   }
 
   @override
@@ -103,7 +102,7 @@ class _CepPageState extends State<CepPage> {
                 future: getInfoByCep(),
                 builder: (context, AsyncSnapshot<CepModel?> snapshot) {
                   if (snapshot.data == null) {
-                    return const Text('');
+                    return const Text('Nenhum resultado ainda.');
                   }
                   cepModel = snapshot.data;
                   return Card(
