@@ -1,0 +1,53 @@
+- O QUE É ACESSIBILIDADE?
+
+    É você garantir que seu aplicativo possa ser usado por todos.
+
+    É uma forma de deixar a interface do usuário o máximo acessível para todas as pessoas que usam o aplicativo.
+
+    Do total da população brasileira, 23,9% (45,6 milhões de pessoas) declararam ter algum tipo de deficiêcia. Entre as deficiêcias
+    declaradas, a mais comum foi a visual, atingindo 3,5% da população. Em seguida, ficaram problemas motores (2,3%), intelectuais
+    (1,4%) e auditivos (1,1%).
+
+    Segundo dados do IBGE de 2010, no Brasil, das mais de 6,5 milhões de pessoas com alguma deficiêcia visual:
+        * 528.624 pessoas são incapazes de enxergar(cegos);
+        * 6.056.654 pessoas possuem baixa visão ou visão subnormal (grande e permanente dificuldade de enxergar);
+
+- COMO O FLUTTER NOS AJUDA NISSO?
+
+    Ele trabalha com nós semânticos;
+
+    Com isso, ele foi construído de forma amigável com o Talkback e do VoiceOver.
+
+    * Interações ativas
+        Certifique-se de que todas as interações ativas façam algo. Qualquer botão que possa ser pressionado deve fazer algo quando
+        pressionado. Por exemplo, se você tiver um retorno de cahamada sem op para um evento, altere-o para mostrar um na tela explicando
+        qual controle você acabou de apertar    .onPressedSnackBar
+
+    * Teste do leito da tela
+        O leitor da tela deve ser capaz de descrever todos os controles na página quando você tocar neles, e as descrições devem ser
+        inteligíveis. Teste seu aplicativo com Talkback(Android) ou VoiceOver(iOS).
+
+    * Relações de contraste
+        Nós encorajamos você a ter uma razão de contraste de pelo menos 4,5:1 entre controles ou textos e o fundo, com exceção dos
+        componentes desativados. As imagens também devem ser examinadas para contraste suficiente.
+
+    
+    * Mudança de contexto
+        Nada deve alterar automaticamente o contexto do usuário ao digitar informações. Geralmente, os widgets devem evitar mudar o 
+        contexto do usuário sem algum tipo de ação de confirmação.
+
+    * Alvos pressionáveis
+        Todos os alvos aproveitadores devem ser de pelo menos 48x48 pixels.
+
+    * Erros
+        Ações importantes devem ser feitas no local do erro. Sugira uma correção ali, se possível.
+
+    * Teste de deficiência de visão de correção
+        Os controles devem ser utilizáveis e legíveis nos modos daltônico e em escala de cinza.
+    
+    * Fatores de escala
+        A inteface do usuário deve permanecer legível e utilizável entre fatores de escala muito grande para o tamanho do texto e o 
+        dimensionamento do display.
+    
+    Os widgets padrão do Flutter geram automaticamente uma árvore semântica (de acessibilidade). No entanto, se o seu aplicativo
+    precisar de algo diferente, ele pode ser personalizado usndo o widget Semântico.  

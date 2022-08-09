@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'stream_builder_page.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,18 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Acessibilidade',
       theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.pink,
-        scaffoldBackgroundColor: Colors.pink.shade100,
+        primarySwatch: Colors.lime,
+        scaffoldBackgroundColor: Colors.lime.shade50,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.lime,
           centerTitle: true,
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage2(),
+      home: const HomePage(),
     );
   }
 }

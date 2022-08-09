@@ -1,0 +1,10 @@
+- INTERNACIONALIZAÇÃO
+
+    * Se o seu aplicativo pode ser implantado para usuários que falam outro idioma, então você precisará internacionalizá-lo.
+    Isso significa que você precisa escrever o aplicativo de uma maneira que possibilite a localização de valores como
+    texto e layouts para cada idioma ou local que o aplicativo suporta.
+
+- COMO O FLUTTER NOS AJUDA COM ISSO?
+
+    * O Flutter fornece widgets e classes que ajudam na internacionalização e as próprias bibliotecas do Flutter são
+    internacionalizadas.
