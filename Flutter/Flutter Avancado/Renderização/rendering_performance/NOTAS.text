@@ -1,0 +1,47 @@
+- OTIMIZAÇÃO DE PERFORMANCE
+
+    * Performance na renderização
+
+    * Tamanho do App
+
+    * Otimização pode ser pensado em 4 tópicos
+
+        * Velocidade
+
+        * Memória
+
+        * Tamanho do aplicativo
+
+        * Energia
+
+- PERFORMANCE NA RENDERIZAÇÃO
+
+    * Sempre que possível use CONST nos widgets (porque dai ele vai compilar em tempo de execução);
+
+    * Não faça sua árvore de qualquer jeito;
+
+    * Não faça widgets desnecessários;
+
+    * Faça a extração de widgets com classes Stateless e não com métodos;
+
+    * Sempre que possível crie os construtores;
+
+    * Evite trabalhos repetitivos;
+
+    * Evite widgets únicos excessivamete grandes;
+
+    * Evite chamar no alto da árvore se a alteração estiver contida em uma pequena parte da árvore;
+
+    * Use construtoresem widgets o máximo possível, pois eles permitem que o Flutter cause um curto-circuito na maior 
+    parte do trabalho de reconstrução;
+
+    * Para criar partes reutilizáveis de UIs, prefira usar um StatelessWidget em vez de uma função que retnorne o widget;
+
+    * Evite usar o widget Opacity e evite-o principalmente em uma animação. Use AnimatedOpacity ou FadeInImage em vez disso;
+
+    * Ao usar um AnimatedBuilder, evite colocar uma sub-árvore na função do construtor que cria widgets que não dependem da
+    animação. Esta sub-árvore é reconstruída para cada tick da animação. Em vez disso, construa essa parte da sub-árvore
+    uma vez e passe-a como filha para o AnimatedBuilder;
+
+    * Evite usar construtores com uma lista concreta de filhos (como Column() ou ListView()) se a maioria dos filhos não
+    estiverem visíveis na tela para evitar o custo de construção.
