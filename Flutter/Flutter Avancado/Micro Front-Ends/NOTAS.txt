@@ -1,0 +1,54 @@
+- SOBRE MICRO FRONT-ENDS
+
+    * A ideia de Micro Front-Ends é exetamente permitir que cada pedaço da aplicação seja independente.
+
+    * Micro Front-Ends não é para qualquer projeto. É necessário uma equipe robusta, pois, se for
+    implementado de forma incorreta irá matar o projeto.
+
+    * Em uma aplicação comum as pastas todas tem acesso uma a outra, entretanto quando trabalhamos com
+    Micro tudo fica isolado e independente.
+
+    * Micro Front-Ends se inspirou em Micro Serviços do Back-End.
+
+    * Em Flutter podermos utilizar desse padrão através da criação de packages templates, que são packages
+    locais
+        flutter create --template=package micro-app
+
+    * Para a organização de Micro Front-Ends podemos utilizar algumas abordagens para fazer essa separação
+    lógica dos nossos projetos utilizando Mono-Repo e Multi-Repo.
+
+    * Monolito é um Git com um projeto.
+
+    * Mono-Repo é um Git com vários projeto. Projeto em um único repositório, com separação lógica via
+    pastas e subpastas.
+
+    * Multi-Repo são vários Git cada um com seu projeto. Nossos "Produtos" são separados em vários repositórios
+    diferentes, tendo um projeto base responsável pelo import de todos os demais produtos (MF).
+
+    * O fluxo de implantação ideal e natural é Monolitico, Mono-Repo e Multi-Repo.
+
+- TÁ, SE SÃO SEPARADOS, COMO SE COMUNICAM?
+
+    * Várias abordagens podem ser utilizadas para resolver o problema de comunicação.
+
+    * Podemos aplicar uma técnica chamada de event bus, onde criamos um broadcast que consegue enviar
+    mensagens para todos os Micro Front-Ends.
+
+- O QUE É EVENT BUS?
+    
+    * Publisher -> grita o evento [post()] -> EventBus -> ouve o grito -> Subscriber [onEvent()]
+
+    * Um post() pode ser ouvido por diversos Subscriber
+
+- TIPOS DE MICRO FRONT-ENDS
+
+    * Base-app: o responsável por realizar os imports e inicialização de todos os MF.
+
+    * Micro-core: possui a maior responsabilidade nesta arquitetura, é o responsável por possuir os 
+    contratos de inicilização e vai ser a ponte entre o Base-app e os demais Micros, possibilitando
+    suas comunicações.
+
+    * Micro-app: responsável por de fato possuir toda a lógica de produto. Não sabe da existência de
+    outros Micro-apps e somente conhece as libs comuns.
+
+    * Micro-commons: conta com toda a parte estrutural, design systems, dependências e etc.
