@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, duplicate_ignore
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +16,7 @@ class _DeleteApiPageState extends State<DeleteApiPage> {
 
   Future postLogin() async {
     try {
-      urlDelete =
-          '$baseUrl/v1/owners/service/557a0a51-017a-44ea-8931-594083c0f150';
+      urlDelete = '$baseUrl/v1/owners/service/557a0a51-017a-44ea-8931-594083c0f150';
     } catch (e) {
       print('Deu erro na requisição $e');
     }

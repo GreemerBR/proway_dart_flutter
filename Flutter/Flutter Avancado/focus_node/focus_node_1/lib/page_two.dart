@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class PageTwo extends StatefulWidget {
@@ -87,8 +89,7 @@ class _PageTwoState extends State<PageTwo> {
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        content: Text(
-                            'Você precisa preencher os dados corretamente'),
+                        content: Text('Você precisa preencher os dados corretamente'),
                       ),
                     );
                   }

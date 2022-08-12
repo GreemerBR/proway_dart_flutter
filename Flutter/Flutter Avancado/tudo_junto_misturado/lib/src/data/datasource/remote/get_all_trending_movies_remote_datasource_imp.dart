@@ -30,6 +30,8 @@ class GetAllTrendingMoviesRemoteDatasourceImp implements GetAllTrendingMoviesDat
       debugPrint(e.toString());
     }
 
+    movies.sort((a, b) => b.voteAverage.compareTo(a.voteAverage));
+
     return movies;
   }
 }

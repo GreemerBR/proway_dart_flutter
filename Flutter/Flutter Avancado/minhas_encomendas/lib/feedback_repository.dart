@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dio/dio.dart';
 import 'package:minhas_encomendas/percentage_model.dart';
 
@@ -5,8 +7,7 @@ class FeedbackRepository {
   final Dio dio;
   FeedbackRepository(this.dio);
 
-  Future<List<PercentageModel>> getFeedbacks(
-      PercentageModel feedbackModel) async {
+  Future<List<PercentageModel>> getFeedbacks(PercentageModel feedbackModel) async {
     List<PercentageModel> events = [];
 
     // var data = {

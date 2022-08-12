@@ -5,74 +5,74 @@ class MovieDto extends MovieEntity {
     required bool adult,
     required String backdropPath,
     required int id,
-    required String name,
+    required String title,
     required String originalLanguage,
-    required String originalName,
+    required String originalTitle,
     required String overview,
     required String posterPath,
     required String mediaType,
     required List<int> genreIds,
     required double popularity,
-    required String firstAirDate,
+    required String releaseDate,
+    required bool video,
     required double voteAverage,
     required int voteCount,
-    required List<String> originCountry,
   }) : super(
           adult: adult,
           backdropPath: backdropPath,
           id: id,
-          name: name,
+          title: title,
           originalLanguage: originalLanguage,
-          originalName: originalName,
+          originalTitle: originalTitle,
           overview: overview,
           posterPath: posterPath,
           mediaType: mediaType,
           genreIds: genreIds,
           popularity: popularity,
-          firstAirDate: firstAirDate,
+          releaseDate: releaseDate,
+          video: video,
           voteAverage: voteAverage,
           voteCount: voteCount,
-          originCountry: originCountry,
         );
-
   Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-
-    result.addAll({'adult': adult});
-    result.addAll({'backdrop_path': backdropPath});
-    result.addAll({'id': id});
-    result.addAll({'name': name});
-    result.addAll({'original_language': originalLanguage});
-    result.addAll({'original_name': originalName});
-    result.addAll({'overview': overview});
-    result.addAll({'poster_path': posterPath});
-    result.addAll({'media_type': mediaType});
-    result.addAll({'genre_ids': genreIds});
-    result.addAll({'popularity': popularity});
-    result.addAll({'first_air_date': firstAirDate});
-    result.addAll({'vote_average': voteAverage});
-    result.addAll({'vote_count': voteCount});
-    result.addAll({'origin_country': originCountry});
-    return result;
+    return <String, dynamic>{
+      'adult': adult,
+      'backdropPath': backdropPath,
+      'id': id,
+      'title': title,
+      'originalLanguage': originalLanguage,
+      'originalTitle': originalTitle,
+      'overview': overview,
+      'posterPath': posterPath,
+      'mediaType': mediaType,
+      'genreIds': genreIds,
+      'popularity': popularity,
+      'releaseDate': releaseDate,
+      'video': video,
+      'voteAverage': voteAverage,
+      'voteCount': voteCount,
+    };
   }
 
   factory MovieDto.fromMap(Map<String, dynamic> map) {
     return MovieDto(
-      adult: map['adult'] as bool,
-      backdropPath: map['backdrop_path'] as String,
-      id: map['id'].toInt() as int,
-      name: map['name'] as String,
-      originalLanguage: map['original_language'] as String,
-      originalName: map['original_name'] as String,
-      overview: map['overview'] as String,
-      posterPath: map['poster_path'] as String,
-      mediaType: map['media_type'] as String,
-      genreIds: List<int>.from((map['genre_ids'] as List<int>)),
-      popularity: map['popularity'].toDouble() as double,
-      firstAirDate: map['first_air_date'] as String,
-      voteAverage: map['vote_average'].toDouble() as double,
-      voteCount: map['vote_count'].toInt() as int,
-      originCountry: List<String>.from((map['origin_country'] as List<String>)),
+      adult: map['adult'] ?? false,
+      backdropPath: map['backdrop_path'] ?? '',
+      id: map['id'].toInt() ?? 0,
+      title: map['title'] ?? '',
+      originalLanguage: map['original_language'] ?? '',
+      originalTitle: map['original_title'] ?? '',
+      overview: map['overview'] ?? '',
+      posterPath: map['poster_path'] ?? '',
+      mediaType: map['media_type'] ?? '',
+      genreIds: List<int>.from(
+        map['genre_ids'],
+      ),
+      popularity: map['popularity'].toDouble() ?? 0.0,
+      releaseDate: map['release_date'] ?? '',
+      video: map['video'] ?? false,
+      voteAverage: map['vote_average'].toDouble() ?? 0.0,
+      voteCount: map['vote_count'].toInt() ?? 0,
     );
   }
 }

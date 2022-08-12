@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +23,7 @@ class _CepPageState extends State<CepPage> {
       String cep = cepController.text.replaceAll(RegExp('[^0-9]+'), '');
 
       if (cep.length >= 8) {
-        final response =
-            await Dio().get('https://viacep.com.br/ws/89012360/json/');
+        final response = await Dio().get('https://viacep.com.br/ws/89012360/json/');
 
         if (response.data['erro'] != true) {
           return CepModel.fromMap(response.data);
