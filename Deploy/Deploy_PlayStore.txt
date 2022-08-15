@@ -1,0 +1,9 @@
+- Como assinar o app para publicar no Android
+    - A importância do name-package e como mudá-lo
+    - Criação do arquivo jks
+    - Criando o arquivo key.properties
+    - Conectando ao nosso app com key.properties no gradle
+    - Mudando para release nosso SigningConfigs no gradle
+    - Mudando o ícone do projeto
+    - Gerando o apk / appbundle
+    - Pinceladas + bônus

@@ -1,0 +1,62 @@
+- Os 3 monstros a derrotar
+
+    * Apple Developer Program
+
+        É o site da Apple Inc. Ele contém ferramentas e recursos para ajudar os desenvolvedores de software, principalmente para criar os
+        Certificates, Identifiers & Profiles.
+
+    * App Store Connect
+
+        É um conjunto de ferramentas baseadas na Web para gerenciar aplicativos vendidos no App Store. Como membro do Programa de Desenvolvedores
+        da Apple, você usará App Store Connect para enviar e gerenciar aplicativos, convidar os usuários a testar com o TestFlight adicionar
+        informações fiscais e bancárias, acessar relatórios de vendas e muito mais.
+
+    * XCode
+
+        É um ambiente de desenvolvimento integrado e software livre da Apple Inc. para gerenciamento de projetos relacionados com o sistema
+        operacional macOS. Ele possui ferramentas para o usuário criar e melhorar seus aplicativos.
+
+Passo a Passo
+
+    * Step 1 - Registrar um Bundle ID
+
+        - No Apple Developer Program;
+        - Clique em Certificates, Identifiers & Profiles;
+        - Criar um Identifier;
+        - App IDs;
+        - Clicr em App; e
+        - Colocar uma descrição e o Bundle ID (explicit).
+
+    * Step 2 - Criar um App na AppStore
+
+        - Na App Store Connect;
+        - Clica em Meus Apps;
+        - Criar um novo App (Apps+);
+        - Preencher as informações de acordo com seu projeto;
+        - SKU coloca o nome que usou no Bundle em cammelCase; e
+        - Acesso Total.
+
+    * Step 3 - Rever as configurações do Projeto
+
+        - No XCode, clique em Runner > Target > Depois escolha runner de novo;
+        - Confira o App name, entre outros;
+        - Marcar o Automatically Manage Signing;
+        - Se não tem tem Team criar e adicionar; e 
+        - Colocar o mesmo Bundle ID criado no Step 2.
+    
+    * Step 4 - Criar um build archive
+
+        - No XCode, vá na barra de menus superior;
+        - Product > Verifique se na guia Scheme o runner está selecionado;
+        - Na guia destination > Selecione Any iOS device;
+        - Depois na barra de Menu Product > Clique em Archive; e
+        -  Depois de terinar, abrirá uma janela, escolha o build e vá clicando em next.
+    
+    * Step 5 - Release to App Store
+
+        - Escolher o build que subimos la na Apple Store Connect; e
+        - Preencher os formulários e configurações.
+
+
+
+        
