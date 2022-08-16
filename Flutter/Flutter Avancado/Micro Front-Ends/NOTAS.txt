@@ -52,3 +52,5 @@
     outros Micro-apps e somente conhece as libs comuns.
 
     * Micro-commons: conta com toda a parte estrutural, design systems, dependências e etc.
+
+- 
