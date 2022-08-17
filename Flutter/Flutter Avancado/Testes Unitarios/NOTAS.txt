@@ -1,0 +1,44 @@
+- PORQUE TESTAR ?
+    * Testes não podem dizer se seu produto está livre de falhas;
+
+    * Para garanir que o sistema atenda todos os requisitos conforme o cliente solicitou;
+
+    * Teste unitários ajudam a documentar o seu código;
+
+    * Testes automatizados ajudam na verificação de funcionalidades que necessitam de testes contínuos
+    e a monitorar e sinalizar problemas antigos.
+
+- OS 3 TIPOS DE TESTES
+
+    * TESTE UNITÁRIOS - testamos funcionalidades específicas, como métodos 
+
+        - utilizamos a dev_dependencie chamada test
+
+    * TESTES DE INTEGRAÇÃO / WIDGETS - onde testamos os repositórios (tudo que vem de fora) e os widgets
+
+        - testes de widgets: tem como objetivo verificar se ele agirá da forma esperada. Além disso, o widget testado
+        poderá receber e reagir a eventos do usuário, coneguirá instanciar widgets filhos e simulará a construção da UI.
+
+        - precisamos importar apenas o flutter_test como dev_dependencie
+
+        - WidgetTester: Responsável por toda a "simulação" do seu widget, construção, gestos, etc;
+
+        - pumpWidget(): Cria o widget e fala para o WidgetTester contruí-lo;
+
+        - pump(): Recontrói o widget depois de um determinado período de tempo;
+
+        - pumpAndSettle(): Recontrói o widget até o último frame/estado, essencial quando se está testando mudando o
+        estado do widget;
+
+        - Finder: Responsável por achar os widgets.
+
+    * TESTE DE UI - onde fazemos testes simulando usuários para testar os elementos gráficos do seu aplicativo
+
+        - Precisamos adicionar a dependência flutter_driver que irá nos auxiliar nesse processo;
+
+        - Podemos adicionar mais uma dependência ao nosso projeto, o flutter_gherkin;
+
+        - Após a instalação dessa dependência, podemos escrever nossos testes de forma mais ágil e trabalhar
+        com documentação utilizando gherkin;
+
+        - Então, criamos uma nova estutura para os nossos teste.
