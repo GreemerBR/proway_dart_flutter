@@ -1,0 +1,33 @@
+- O QUE É CI/CD
+
+    * Em eng de software, CI/CD ou CICD pode se referir às práticas combinadas de integração contínua e entrega contínua.
+    CI/CD preenche as lacunas entre as atividades e equipes de desenvolvimento e operação, reforçado a automação na 
+    compilação, teste e implantação de aplicativos.
+
+- O QUE É GITHUB ACTIONS?
+
+    * O GitHub Actions é feito  é feito por e para desenvolvedores, para que você não pecise de recursos dedicados para
+    configurar e manter seu pipeline. Não há necessidade de configurar manualmente e configurar o CI/CD.
+    
+    * Você não precisa configurar webhook, você não precisa comprar hardware, reservar algumas instâncias lá fora, mantê-los
+    atualizados, fazendo patches de segurança ou bobinar máquinas ociosas. Você só deixa cair um arquivo em seu repo, e
+    ele funciona.
+
+- O QUE É PIPELINE EM CI/CD?
+
+    * O pipeline de CI/CD inclui monitoramento e automação para melhorar o processo de desenvolvimento de aplicações 
+    principalmente nos estágios de intergração e teste, mas também na entrega e na implantação.
+
+    * É possível executar manualmente cada etapa do pipeline de CI/CD, mas o real valor dele está na automação.
+
+- PASSO A PASSO PARA configurar
+
+    * 1° Crie ou escolha um repositório um repositório e escolha um projeto;
+
+    * 2° Abra as Actions do GitHub em seu repositório para começar a construir seu fluxo de trabalho de CI/CD;
+
+    * 3° Faça alterações no seu código para acionar seu pipeline de CI/CD;
+    
+    * 4° Dê uma olhada no visualizador de fluxo de trabalho e logs ao vivo para obter uma visão completa de como,
+    seu pipeline está funcionando.
+
